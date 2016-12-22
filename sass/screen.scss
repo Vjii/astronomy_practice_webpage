@@ -1,0 +1,798 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// Compass mixins 
+
+@import "compass";
+@import "compass/layout";
+@import "zen-grids";
+@import "zen-grids/background";
+
+// Partials
+
+@import "normalize";
+@import "suckerfish";
+@import "page";
+
+//Variables	
+
+$color: #0A1832;
+$zen-gutters: 15px !global;
+
+
+// SCSS 
+
+$display-zen-grid-background: true !default;
+
+
+/* POSITION LAYOUT 
+
+	body {
+		position: relative; 
+		margin: 0;
+	}
+
+
+
+.nav-bar {
+	position: absolute;
+	top: 0px;
+	left: 0;
+	right: 0;
+}
+
+.header {
+	position: absolute;
+	top: 67.5px;
+	left: 0;
+	right: 0;
+}
+
+.main {
+	position: absolute;
+	top: 575.5px;
+	left: 0;
+	right: 0;
+}
+
+.footer {
+	position: absolute;
+	top: 1245.313px;
+	left: 0;
+	right: 0;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+// Base classes 
+
+html, body {
+	margin: 0;
+	padding: 0;
+
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+a, h1, h2, h3, h4, h5, h6, p { 
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #e8eff4;
+}
+
+
+// Helper classes 
+
+.font-small {
+	font-size: 0.8em;
+	line-height: 2em;
+	font-weight: normal;
+}
+
+
+// Layout
+
+
+.container { 
+  @include zen-grid-container();
+	padding: 0 20px;
+	@include zen-new-row();
+}
+
+@include suckerfish;
+
+.nav-bar { 
+	@include zen-grid-container();
+	
+	background-color: #000;
+
+	min-height: 50px;
+	padding-top: 12.5px;
+}
+
+.logo {
+	max-width: 125px;	
+	margin-top: .75%;
+}
+
+.nav-icon {
+	@include zen-grid-item(2, 11);
+	margin-top: 1.5%;
+	zoom: .9;
+}
+
+.main-nav {
+padding: 0;
+}
+
+.nav-item {
+	margin: 1em auto 0;
+	width: 67.5%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #000;
+	text-align: center;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	}
+
+	.nav-link {
+		padding: 1em;
+	}
+
+.header { 
+	@include zen-new-row();
+	@include zen-grid-container();
+	min-height: 250px;
+	
+	background-image: url("../img/astronaut-large.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-color: #020a13;
+
+
+}
+
+
+
+.header-description {
+	@include zen-new-row(left);
+	@include zen-grid-item(4, 2);
+	color: #fff;
+	margin-top: 11.082%;
+	margin-bottom: 11.082%;
+	text-align: justify;
+
+	p {
+		font-size: .8em;
+		color: #176eb0;
+	}	
+}
+
+
+//Main 
+
+.col {
+	@include zen-grid-container();
+	@include zen-new-row();
+}
+
+.main-heading {
+	background-image: url(../img/adbox-bg-heading.jpg);
+	min-height: 64px;
+  border-color: #000;
+  border-style: solid none;
+  border-width: 1px;
+
+   
+
+	h2 {	
+		font-size: 1em;
+		color: #484b4b;
+		font-weight: normal;
+	}
+}
+
+
+.main-heading-container {
+
+	h2 {
+		padding: 0 0 0 0;
+		line-height: 32px;
+	}
+
+}
+
+
+.main-heading-description {
+	p {
+		color: #e8eff4;
+		text-align: justify;
+
+		
+		
+	}
+}
+
+
+.two {
+	padding: 2em 0;
+	text-align: center;
+	background-color: #e8eff4;
+	h2, p {
+		color: #07304d;
+	}
+}
+
+
+
+//Footer 
+
+
+.footer {
+	background-image: url("../img/bg-footer.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	text-align: center;
+	a, p {
+			color: #7890a1;
+			font-family: Arial;
+			font-size: 1em;
+		}
+
+		ul {
+				padding: 0;
+			}
+
+
+	}
+
+
+
+
+	.social-container {
+
+	ul {
+			padding: .25em 0 0 0;
+		}
+
+	li {
+			display: inline-block;
+			margin: 5px;
+		}
+
+		div {
+			margin: 0; 
+		}
+
+		.social-div {
+			zoom: .8;
+		}
+}
+
+	.social-div {
+		margin: 7.5px;
+	}
+
+	.blog-container {
+			margin-bottom: 1em;
+			li { 
+			padding: .5em .5em .5em 1.5em;
+			margin: 0 auto;
+			width: 60%;
+			text-align: left;
+			box-shadow: 0px 5px 6px -6px #000;
+		}
+
+		
+	}
+	
+	.copyright {
+			@include zen-new-row();
+		}
+
+
+
+	h3 { 
+		color: #fff;
+		font-weight: normal;
+	}
+
+	.facebook {
+	background: url("../img/social2.png") no-repeat -226px -55px;
+	width: 33px;
+	height: 32px;
+	border-radius: 100%;
+	}
+
+	.google {
+	background: url("../img/social2.png") no-repeat -169px -55px;
+	width: 33px;
+	height: 32px;
+	border-radius: 100%;
+	}
+
+	.twitter {
+		background: url('../img/social2.png') no-repeat -340px -54px;
+	width: 33px;
+	height: 33px;
+	border-radius: 100%;
+	}
+
+	.skype {
+		background: url('../img/social2.png') no-repeat -284px -54px;
+		width: 32px;
+		height: 33px;
+		border-radius: 100%;
+		}
+
+	.social-div {
+		zoom: .8;
+		a {
+			
+		}
+	}
+
+	.copyright { 
+		margin-top: 3em;
+		box-shadow:  0 -3px 2px -3px #fff;
+		color: #ccd;
+		padding: 1.5em 0 1em 0;
+		font-weight: normal;
+		font-size: 14px;
+		letter-spacing: 1px;
+	}
+
+
+
+// Display classes 
+
+.mobile-hide { 
+	display: none;
+}
+
+
+
+
+
+
+//MEDIA QUERIES
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px) { 
+
+	
+
+	$zen-columns: 12 !global;
+	$zen-gutters: 10px !global;
+
+	.container {
+		@include zen-grid-container();
+		@include zen-grid-item(10, 2);
+	}
+
+
+	.four-col {
+		@include zen-grid-item(10, 2); 
+		p {
+			text-align: justify;
+		}
+	}
+
+	.bg-shuttle {
+		@include zen-grid-item(12, 1);
+		min-height: 400px;
+	}
+
+	.nav-container {
+		text-align: center;
+	}
+
+	.logo {
+		margin-left: -6%;
+		max-width: 250px;
+	}
+
+	.nav-icon {
+		display: none;
+	}
+
+	.main-nav {
+		margin: 14.672px auto 1em;
+		display: block;
+		li {
+			display: inline-block;
+			width: 5.5em;
+			margin: .5em .1em;
+		}
+	}
+
+
+
+//MAIN 
+
+	.main-heading-container {
+		h2 {	
+
+			font-size: 1.2em;
+			color: #484b4b;
+			font-weight: normal;
+		}
+	}
+
+	.picture-one {
+		@include zen-grid-item(4, 2);
+	}
+
+	.picture-two {
+		@include zen-grid-item(4, 8);
+
+	}
+
+	.picture-three {
+		@include zen-new-row();
+		@include zen-grid-item(4, 2);
+
+	}
+
+	.picture-four {
+		@include zen-grid-item(4, 8);
+
+	}
+
+	.bg-shuttle {
+		background-image: url("../img/bg-adbox.jpg");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-color: #020a13;
+	}
+
+	.header {
+		background:  #020a13;
+	}
+
+	.mobile-hide {
+		display: block;
+	}
+
+	.box-img {
+	width: 100%;
+	}
+
+
+
+//FOOTER 
+
+	.footer::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+
+		.social-container {
+			@undo-zen-new-row();
+			@include zen-grid-item(3, 1);
+
+			li {
+				max-width: 30px;
+				margin: 5px;
+			
+			}
+			
+			
+		}
+
+		.blog-container {	
+			@undo-zen-new-row();
+			@include zen-grid-item(4, 5);
+			clear: none;
+			text-align: left;
+			
+			li {
+				width: 95%;
+			}
+
+		}
+
+		.newsletter {
+			@undo-zen-new-row();
+			@include zen-grid-item(3, 10);
+			text-align: left;
+
+			li {
+				padding-top: .5em;
+			}
+
+		}
+
+		.copyright {
+			@include zen-new-row();
+			font-size: 1em;
+			margin-top: 1em;
+		}
+
+		.social-div {
+			display: inline-block;
+			zoom: .7;
+		}
+
+		.facebook {
+			margin-left: 0;
+		}
+
+		.footer-div {
+			h3 {
+				text-align: center;
+			}
+		}
+
+		h3 { 
+			font-size: 1em;
+		}
+
+}
+
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+
+		.main-heading {
+			h2 {
+				font-size: 1.4em;
+			}
+		}
+
+		.header-description {
+			p {
+				font-size: 1.2em;
+			}
+		}
+
+		.social-container {
+
+			li {
+				max-width: 32.5px;
+				margin: 2.5px;
+			}
+			div {
+				margin: 0;
+			}
+		}
+		.social-div {
+			zoom: .75;
+		}
+
+
+	}
+
+
+@media only screen and (min-width: 950px) { 
+	
+
+
+	$zen-gutters: 20px !global;	
+//NAVIGATION
+
+
+	body {
+		margin: 0 auto;
+		position: relative;
+	}
+
+
+
+
+
+.nav-bar {
+	margin: 0;
+	padding: 0;
+}
+
+.nav-container {
+		text-align: none;
+		display: inline-block;
+		height: 67.5px;
+		
+	}
+
+	.logo {
+		@include zen-grid-item(3, 1);
+		margin-top: 14.672px;
+		max-width: 175px;
+	}
+
+
+
+	.main-nav {
+	@include zen-grid-item(10, 4);
+	display: inline-block;
+		li {
+			display: inline-block;
+			width: 5.5em;
+			margin: 0;
+		}
+		a {
+			font-size: 1.2em;
+		}
+	}
+
+	.nav-item {
+		border: none;
+	}
+
+	.bg-shuttle {
+		min-height: 400px;
+	}
+
+	.header-description {
+
+		h2 {
+			font-size: 2.2em;
+			font-weight: normal;
+		}
+	}
+
+	.main-heading {
+		h2 {
+			font-size: 1.6em;
+			line-height: 21.469px;
+			vertical-align: top;
+		}
+	}
+
+	.main-heading-description {
+		
+		p {
+			font-size: 1em;
+			text-align: justify;
+		}
+	}
+
+	.main-description {
+		@include zen-grid-item(10, 2);
+		text-align: justify;
+	}
+
+
+
+	.picture-one {
+		@include zen-grid-item(3, 1);
+	}
+
+	.picture-two {
+		@include zen-grid-item(3, 4);
+
+	}
+
+	.picture-three {
+		@include undo-zen-new-row();
+		@include zen-grid-item(3, 7);
+
+	}
+
+	.picture-four {
+		@include undo-zen-new-row();
+		@include zen-grid-item(3, 10);
+	}
+
+
+	//FOOTER 
+
+	.footer-div {
+		h3 {
+			font-size: 1.2em;	
+		}
+	}
+
+
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+	
+
+
+
+	.main-nav {
+		li {
+			width: 5em;
+		}
+
+		a {
+			font-size: 1.2em;
+		}
+	}
+
+	
+	.bg-shuttle {
+		@include zen-grid-item(12, 1);
+	}
+
+
+
+}
+
+
+@media only screen and (min-width: 1400px)  {
+	
+
+
+.container {
+		@include zen-grid-item(8, 3);
+	}
+
+
+.bg-shuttle {
+	@include zen-grid-item(12, 1);
+}
+
+
+.header-description {
+		@include zen-grid-item(4, 3);
+	}
+
+
+		.main-nav {
+	@include zen-grid-item(9, 5);
+		li {
+			width: 6em;
+		}
+
+		a {
+			font-size: 1.4em;
+		}
+	}
+
+}
+
+
+
+@media only screen and (min-width: 1500px)  {
+
+	$zen-columns: 8 !global;
+
+	.container {
+		@include zen-grid-item(4, 3)	;
+	}
+
+	.bg-shuttle {
+		@include zen-grid-item(6, 2);
+	}
+
+	.header-description {
+		@include zen-grid-item(2.5, 2.320);
+	}
+
+	.main-nav {
+	a {
+			font-size: 18px;
+		}
+	}
+}
+
